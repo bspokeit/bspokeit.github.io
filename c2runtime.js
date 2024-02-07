@@ -19242,8 +19242,8 @@ cr.plugins_.Browser = function(runtime)
 			CocoonJS["App"]["forceToFinish"]();
 		else if (window["tizen"])
 			window["tizen"]["application"]["getCurrentApplication"]()["exit"]();
-		else if (navigator["app"] && navigator["app"]["exitApp"])
-			navigator["app"]["exitApp"]();
+		//else if (navigator["app"] && navigator["app"]["exitApp"])
+		//	navigator["app"]["exitApp"]();
 		//else if (navigator["device"] && navigator["device"]["exitApp"])
 		//	navigator["device"]["exitApp"]();
 		//else if (!this.is_arcade && !this.runtime.isDomFree)
