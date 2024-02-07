@@ -19246,8 +19246,8 @@ cr.plugins_.Browser = function(runtime)
 			navigator["app"]["exitApp"]();
 		else if (navigator["device"] && navigator["device"]["exitApp"])
 			navigator["device"]["exitApp"]();
-		else if (!this.is_arcade && !this.runtime.isDomFree)
-			window.close();
+		// else if (!this.is_arcade && !this.runtime.isDomFree)
+		// 	window.close();
 	};
 	Acts.prototype.Focus = function ()
 	{
