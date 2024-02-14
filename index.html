@@ -7,13 +7,13 @@
 	<title>Inline JavaScript</title>
 </head>
 
-<script>
+<!-- <script>
 	// Your JavaScript code to intercept document load event
 	document.addEventListener("DOMContentLoaded", function () {
 		// Your code to handle the document load event
 		alert("Document has finished loading!");
 	});
-</script>
+</script> -->
 
 <body>
 	<h1>Inline JavaScript Example</h1>
@@ -21,12 +21,13 @@
 	<script>
 		function sendEventToParent(eventName) {
 				return function () {
+					alert("Document has finished loading!");
 					window.parent.postMessage(eventName, '*');
 				};
 			}
 
 			if (typeof window !== 'undefined' && window !== window.top) {
-				document.addEventListener('load', sendEventToParent('subframeLoad'));
+				document.addEventListener('DOMContentLoaded', sendEventToParent('subframeLoad'));
 				document.addEventListener('click', sendEventToParent('click'));
 				document.addEventListener('touchstart', sendEventToParent('touchstart'));
 				document.addEventListener('touchmove', sendEventToParent('touchmove'));
