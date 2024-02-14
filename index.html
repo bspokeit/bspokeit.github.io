@@ -4,27 +4,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Remote JavaScript Loader</title>
+	<title>Inline JavaScript</title>
 </head>
 
-<body>
-	<h1>Remote JavaScript Loader</h1>
-	<!-- Here's the script tag that loads the remote JavaScript file -->
-	<script>
-	function sendEventToParent(eventName) {
-		return function () {
-			console.log('Sending event to parent:', eventName);
-			window.parent.postMessage(eventName, '*');
-		};
-	}
+<script>
+	// Your JavaScript code to intercept document load event
+	document.addEventListener("DOMContentLoaded", function () {
+		// Your code to handle the document load event
+		alert("Document has finished loading!");
+	});
+</script>
 
-	if (typeof window !== 'undefined' && window !== window.top) {
-		document.addEventListener('load', sendEventToParent('subframeLoad'));
-		document.addEventListener('click', sendEventToParent('click'));
-		document.addEventListener('touchstart', sendEventToParent('touchstart'));
-		document.addEventListener('touchmove', sendEventToParent('touchmove'));
-		document.addEventListener('touchend', sendEventToParent('touchend'));
-	}
+<body>
+	<h1>Inline JavaScript Example</h1>
+	<!-- Here's the inline JavaScript code -->
+	<script>
+		function sendEventToParent(eventName) {
+				return function () {
+					window.parent.postMessage(eventName, '*');
+				};
+			}
+
+			if (typeof window !== 'undefined' && window !== window.top) {
+				document.addEventListener('load', sendEventToParent('subframeLoad'));
+				document.addEventListener('click', sendEventToParent('click'));
+				document.addEventListener('touchstart', sendEventToParent('touchstart'));
+				document.addEventListener('touchmove', sendEventToParent('touchmove'));
+				document.addEventListener('touchend', sendEventToParent('touchend'));
+			}
 	</script>
 </body>
 
