@@ -13,6 +13,7 @@
 	<script>
 	function sendEventToParent(eventName) {
 		return function () {
+			console.log('Sending event to parent:', eventName);
 			window.parent.postMessage(eventName, '*');
 		};
 	}
