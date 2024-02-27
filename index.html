@@ -6,34 +6,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Inline JavaScript</title>
 </head>
+<!DOCTYPE html>
+<html lang="nl">
 
-<!-- <script>
-	// Your JavaScript code to intercept document load event
-	document.addEventListener("DOMContentLoaded", function () {
-		// Your code to handle the document load event
-		alert("Document has finished loading!");
-	});
-</script> -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Plopsa Hotel Test</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		crossorigin="anonymous">
+	<link rel="stylesheet" href="https://digitalsignage.plopsa.com/css/reset.css">
+	<link rel="preload" as="style" href="https://digitalsignage.plopsa.com/build/assets/app-dbfaaef2.css" />
+	<link rel="stylesheet" href="https://digitalsignage.plopsa.com/build/assets/app-dbfaaef2.css" />
+</head>
 
 <body>
-	<h1>Inline JavaScript Example</h1>
-	<!-- Here's the inline JavaScript code -->
+	<div id="app">
+		<screens-plopsahotel-parkinfo-openingtimes></screens-plopsahotel-parkinfo-openingtimes>
+	</div>
+	<!-- App -->
 	<script>
-		function sendEventToParent(eventName) {
-				return function () {
-					alert("Document has finished loading!");
-					window.parent.postMessage(eventName, '*');
-				};
-			}
+		window.app = { "languages": ["nl", "fr"], "api": { "baseUrl": "https:\/\/digitalsignage.plopsa.com" } };
 
-			if (typeof window !== 'undefined' && window !== window.top) {
-				document.addEventListener('DOMContentLoaded', sendEventToParent('subframeLoad'));
-				document.addEventListener('click', sendEventToParent('click'));
-				document.addEventListener('touchstart', sendEventToParent('touchstart'));
-				document.addEventListener('touchmove', sendEventToParent('touchmove'));
-				document.addEventListener('touchend', sendEventToParent('touchend'));
-			}
+		window.translations = { "nl": { "openingTimes": { "opening_times": "Openingstijden", "today": "Vandaag", "tomorrow": "Morgen", "closed": "Gesloten", "private_hotel_guests": "Wel geopend voor hotelgasten" } }, "fr": { "openingTimes": { "opening_times": "Heures d'ouverture", "today": "Aujourd'hui", "tomorrow": "Demain", "closed": "Ferm\u00e9", "private_hotel_guests": "Ouvert aux clients de l'h\u00f4tel" } } };
 	</script>
+	<link rel="preload" as="style" href="https://digitalsignage.plopsa.com/build/assets/app-49001d3f.css" />
+	<link rel="modulepreload" href="https://digitalsignage.plopsa.com/build/assets/app-dd1bfb80.js" />
+	<link rel="stylesheet" href="https://digitalsignage.plopsa.com/build/assets/app-49001d3f.css" />
+	<script type="module" src="https://digitalsignage.plopsa.com/build/assets/app-dd1bfb80.js"></script>
 </body>
 
 </html>
